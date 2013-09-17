@@ -50,3 +50,11 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :github => 'anjlab/bootstrap-rails'
 
 gem 'slim'
+
+group :development do
+  gem 'thin'
+  gem 'quiet_assets'
+
+  gem 'better_errors'
+  gem 'pry-rails'
+end

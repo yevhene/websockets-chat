@@ -5,16 +5,16 @@ section#main
         a.navbar-brand href=""
           'Chat
   section.chat-wrapper
-    section
+    section#chat data-uri="#{request.host}:#{request.port}/websocket"
       = render @messages
   footer.panel.panel-default
     div.panel-body
-      = form_for @message, :html => { :class => 'form-inline', :role => 'form' } do |f|
+      form.form-inline role="form"
         div.form-group.name
-          = f.text_field :name, :class => 'form-control', :placeholder => 'Name'
+          input id="name" class="form-control" placeholder="Name"
         div.text-wrapper
           div.form-group.text
-            = f.text_field :text, :class => 'form-control', :placeholder => 'Text'
+            input id="text" class="form-control" placeholder="Text"
         div.form-group.submit
-          = f.submit 'Ok', :class => 'btn btn-default'
-
+          button.btn.btn-default id="send"
+            'Send
