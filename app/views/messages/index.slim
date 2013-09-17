@@ -1,0 +1,20 @@
+section#main
+  header
+    nav.navbar.navbar-default role="navigation"
+      div.navbar-header
+        a.navbar-brand href=""
+          'Chat
+  section.chat-wrapper
+    section
+      = render @messages
+  footer.panel.panel-default
+    div.panel-body
+      = form_for @message, :html => { :class => 'form-inline', :role => 'form' } do |f|
+        div.form-group.name
+          = f.text_field :name, :class => 'form-control', :placeholder => 'Name'
+        div.text-wrapper
+          div.form-group.text
+            = f.text_field :text, :class => 'form-control', :placeholder => 'Text'
+        div.form-group.submit
+          = f.submit 'Ok', :class => 'btn btn-default'
+
